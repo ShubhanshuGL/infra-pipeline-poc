@@ -36,7 +36,6 @@ jobs:
         terraform_version: ${{ env.TF_VERSION }}
 
     - name: 'Install tflint'
-      continue-on-error: true
       run: |
         curl -sLo tflint.zip https://github.com/terraform-linters/tflint/releases/download/v${{ env.TFLINT_VERSION }}/tflint_linux_amd64.zip
         unzip tflint.zip -d /usr/local/bin/
@@ -64,6 +63,7 @@ jobs:
         tflint
 
     - name: 'tfsec'
+      continue-on-error: true
       run: tfsec .
 
     - name: 'Terraform Plan'

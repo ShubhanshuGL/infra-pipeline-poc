@@ -62,9 +62,9 @@ jobs:
         tflint --init
         tflint
 
-    # - name: 'tfsec'
-    #   continue-on-error: true
-    #   run: tfsec .
+    - name: 'tfsec'
+      continue-on-error: true
+      run: tfsec .
 
     - name: 'Terraform Plan'
       run: terraform plan -out=tfplan
@@ -72,7 +72,6 @@ jobs:
   terraform-apply:
     name: Infra Code Deploy
     runs-on: ubuntu-latest
-   # needs: terraform-plan
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
     - name: 'Checkout GitHub repository'

@@ -2,8 +2,8 @@ provider "aws" {
     region = "ap-south-1"
 }
 #tfsec:ignore:aws-s3-enable-bucket-logging 
-resource "aws_s3_bucket" "infra-bucket"{
-    bucket = "ccom-cloud-infra-test"
+resource "aws_s3_bucket" "infra-bucket-test"{
+    bucket = "ccom-cloud-infra-sample"
 }
 
 # resource "aws_s3_bucket_ownership_controls" "infra-bucket-ownership" {

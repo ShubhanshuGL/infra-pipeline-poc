@@ -3,7 +3,7 @@ provider "aws" {
 }
 #tfsec:ignore:aws-s3-enable-bucket-logging 
 resource "aws_s3_bucket" "infra-bucket-test"{
-    bucket = "ccom-cloud-infra-sample"
+    bucket = "ccom-cloud-infra-demo"
 }
 
 # resource "aws_s3_bucket_ownership_controls" "infra-bucket-ownership" {

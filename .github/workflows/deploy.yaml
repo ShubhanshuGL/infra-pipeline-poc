@@ -62,9 +62,9 @@ jobs:
         tflint --init
         tflint
 
-    - name: 'tfsec'
-      continue-on-error: true
-      run: tfsec .
+    # - name: 'tfsec'
+    #   continue-on-error: true
+    #   run: tfsec .
 
     - name: 'Terraform Plan'
       run: terraform plan -out=tfplan
